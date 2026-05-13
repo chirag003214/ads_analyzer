@@ -1,9 +1,3 @@
-"""
-app.py — CreativeLens: Ads Creative Analyzer
-Premium dark UI. API key loaded from .env file automatically.
-Run with: streamlit run app.py
-"""
-
 import streamlit as st
 import pandas as pd
 from PIL import Image
