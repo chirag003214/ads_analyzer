@@ -1,4 +1,4 @@
-# 🔍 CreativeLens — Ads Creative Analyzer
+# Ads Analyzer
 
 Analyze ad creatives from a single brand, score their likely performance, surface winning patterns, and generate new creative ideas — all powered by AI.
 
@@ -74,10 +74,10 @@ Each ad is scored out of **100 points** across 8 dimensions:
 
 | Score Range | Tier |
 |-------------|------|
-| 80–100      | 🔥 Top Performer |
-| 60–79       | ✅ Strong |
-| 40–59       | ⚡ Average |
-| 0–39        | ⚠️ Weak |
+| 80–100      | Top Performer |
+| 60–79       | Strong |
+| 40–59       | Average |
+| 0–39        | Weak |
 
 ---
 
@@ -106,18 +106,9 @@ Creative Recommendations (single LLM call based on patterns)
 Display Results + CSV Export
 ```
 
----
 
-## 🛡️ Robustness
 
-The app handles failures gracefully:
 
-- **OCR fails?** Returns empty string — LLM still analyzes the image visually.
-- **LLM returns malformed JSON?** 3-layer parsing: direct parse → strip markdown blocks → find JSON substring.
-- **LLM call fails entirely?** Falls back to a default analysis with "unknown" fields — never crashes.
-- **Rate limiting?** 1-second delay between API calls.
-
----
 
 ## ⚖️ Tradeoffs Made
 
@@ -131,30 +122,8 @@ The app handles failures gracefully:
 | **No authentication** | MVP scope — user provides their own API key |
 | **Sequential processing** | Simpler than async. Groq is fast enough for 10-15 images |
 
----
 
-## 🔮 Future Improvements
-
-If this MVP proves useful, here's what to build next:
-
-1. **Batch comparison view** — side-by-side compare top vs bottom performers
-2. **Brand memory** — save past analyses to track creative evolution over time
-3. **Video ad support** — extract keyframes and analyze video creatives
-4. **A/B test correlation** — connect to Meta Ads API to validate scores against real CTR/ROAS
-5. **Multi-model ensemble** — run analysis through multiple models and average
-6. **Competitor analysis** — analyze competitor ads and compare strategies
-7. **Auto-brief generation** — generate full creative briefs from recommendations
 
 ---
 
-## 🤝 Deployment to Streamlit Cloud
 
-1. Push this repo to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Connect your repo and set `app.py` as the main file
-4. Add `GROQ_API_KEY` as a secret (optional — users can also enter it in the UI)
-5. For Tesseract, add a `packages.txt` with: `tesseract-ocr`
-
----
-
-Built as a focused MVP. Ship fast, learn fast. 🚀
