@@ -1,0 +1,7 @@
+streamlit>=1.30.0
+pandas>=2.0.0
+pillow>=10.0.0
+pytesseract>=0.3.10
+plotly>=5.18.0
+groq>=0.4.0
+python-dotenv>=1.0.0
